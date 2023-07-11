@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "version": "1.1.1",
+    "action": {
+        "default_popup": "popup/index.html",
+        "default_icon": {
+            "16": "public/icon/icon32.png",
+            "32": "public/icon/icon32.png",
+            "48": "public/icon/icon48.png",
+            "128": "public/icon/icon128.png"
+        }
+    },
+    "icons": {
+        "16": "public/icon/icon32.png",
+        "32": "public/icon/icon32.png",
+        "48": "public/icon/icon48.png",
+        "128": "public/icon/icon128.png"
+    },
+    "options_page": "options/index.html",
+    "background": {
+        "service_worker": "background/index.js"
+    },
+    "permissions": [
+        "contextMenus",
+        "scripting",
+        "storage",
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "https://wx.zsxq.com/dweb2/index/group/*"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    },
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "cors",
+                "enabled": true,
+                "path": "cors.json"
+            }
+        ]
+    }
+}
